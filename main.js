@@ -1,43 +1,33 @@
 const express = require('express');
-const nameGenerator = require('./Generators/NameGenerator.js')
+const generatorHandler = require('./Generators/GeneratorHandler.js')
 
 const port = 3000;
 
 var app = express();
 
 app.listen(port, () => {
-    nameGenerator.InitialiseGenerators()
+    generatorHandler.InitialiseGenerators()
     console.log(`listening at http://localhost:${port}`);
-});
-
+})
 app.use('/static', express.static('static'))
-
-app.route('/')
-    .get((req, res) => {
-        res.sendFile(__dirname + '/Pages/home.html');
-    });
-
-
-app.route('/sussy')
-.get((req, res) => {
-    res.sendFile(__dirname + '/Pages/sussy.html');
-});
-
-app.route('/rpgthings')
-.get((req, res) => {
-    res.sendFile(__dirname + '/Pages/rpgthings.html');
-});
-
-app.route('/namegen')
-.get((req, res) => {
-    res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html');
-});
+    .get('/', (req, res) => {res.sendFile(__dirname + '/Pages/home.html')})
+    .get('/sussy', (req, res) => {res.sendFile(__dirname + '/Pages/sussy.html')})
+    .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings.html')})
+    .get('/namegen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html')})
 
 app.route('/api')
 .get((req, res) => {
-    var types = nameGenerator.ConvertToCode(req.query.t, req.query.st, req.query.c)
-    var names = nameGenerator.GenerateName(types);
-    res.send(names)
+    var type = req.query.t;
+    var data = [req.query.st, req.query.q1, req.query.q2];
+    console.log(req.query)
+    var result = generatorHandler.GenerateFrom(type, data);
+    res.send(result);
 });
+
+app.use((req, res) => {
+    res.status(404);
+    res.sendFile(__dirname+'/Pages/404.html');
+});
+
 
 

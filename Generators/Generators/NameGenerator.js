@@ -2,42 +2,50 @@ let fs = require('fs')
 
 var MarkovChain = {}
 
-module.exports.ConvertToCode = function(_type, _subtype, _count){
+function convertData (data){
     var code = ""
-    switch(_type){
-        case("human"):
-        code = code+"000"
-        break
-        case("elf"):
-        code = code+"001";
-        break
-        case("dwarf"):
-        code = code+"002";
-        break
-        case("gnome"):
-        code = code+"003";
-        break
+    count = 0;
+    switch (data[0]) {
+        case("char"):
+            switch(data[1]){
+                case("human"):
+                code = code+"000"
+                break
+                case("elf"):
+                code = code+"001";
+                break
+                case("dwarf"):
+                code = code+"002";
+                break
+                case("gnome"):
+                code = code+"003";
+                break
+            }
+            switch(data[2]){
+                case("na"):
+                code = code+"00"
+                break
+                case("ma"):
+                code = code+"01"
+                break
+                case("fe"):
+                code = code+"02"
+                break
+                case("su"):
+                code = code+"03"
+                break
+            }
+            if(data[3]) count = data[3]
+            break
     }
-    switch(_subtype){
-        case("na"):
-        code = code+"00"
-        break
-        case("ma"):
-        code = code+"01"
-        break
-        case("fe"):
-        code = code+"02"
-        break
-        case("su"):
-        code = code+"03"
-        break
-    }
+
+    
     if(_count > 9) code = code + _count
     else code = code + "0" + _count
     return code
 }
 
-module.exports.InitialiseGenerators = function(){
+module.exports.InitialiseGenerator = function(){
     fs.readFile("./Generators/data/names.json", 'utf8' , (err, rawdata) => {
         if (err) return console.error(err);
         var data = JSON.parse(rawdata)
@@ -97,9 +105,13 @@ exports.GenerateName = function (data) {
     var seed = parseInt(data)
 
     return generateName(type, subtype, count, seed);
-};
+}
 
-function generateName (_type, _subtype, _count, _seed) {
+function generateName (data) {
+    
+//_type, _subtype, _count, _seed
+
+
     var o_subtype = _subtype;
     var dict_of_names = []
     if(_subtype == "0" ){
