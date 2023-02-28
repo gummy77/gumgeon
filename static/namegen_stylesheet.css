@@ -1,0 +1,36 @@
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* namegen */
+
+.namegen {
+  text-align: center;
+  padding: 10px;
+}
+
+.namegen .button {
+  background-color: var(--navButtonBackground);
+  display: inline-block;
+  color: black;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.namegen .button a:hover, .button:hover {
+  background-color: var(--navBackgroundHover);
+}
+
+.namegen .namebox {
+  text-align: center;
+  overflow: hidden;
+  height: max-content;
+  padding: 20px;
+}
+.namegen .namebox .names {
+  font-size: 150%;
+  display: inline-block;
+  background-color: var(--pageBackground);
+  width: max-content;
+  min-width: 200px;
+  padding: 10px;
+}

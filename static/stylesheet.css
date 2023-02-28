@@ -1,0 +1,124 @@
+:root {
+  --pageBackground: rgb(255, 233, 245);
+  --boxBackground: rgb(255, 188, 225);
+  --navButtonBackground: rgb(255, 173, 218);
+  --navBackgroundHover: rgb(255, 123, 196);
+}
+
+.container {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+  background-color: var(--pageBackground);
+}
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* header */
+
+.layout_header {
+  padding-bottom: 0px;
+}
+.layout_header header {
+  background-color: var(--boxBackground);
+  text-align: center;
+  box-shadow: 0px 0px 10px gray;
+  padding-bottom: 10px;
+}
+.layout_header a {
+
+  text-decoration: none;
+  font-size: 50px;
+  color: #000000;
+}
+
+.layout_header a:hover {
+  color: #610064;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* navigation */
+.layout_nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.layout_nav ul {
+  background-color: var(--boxBackground);
+  box-shadow: 0px 0px 10px gray;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  text-align:center;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* content */
+
+.layout_content {
+  background-color: var(--boxBackground);
+  box-shadow: 0px 0px 10px gray;
+  text-align: center;
+  overflow: hidden;
+  min-height: 600px;
+}
+.layout_content .amongus {
+  background-image: url("/static/images/among-us.gif");
+  background-repeat: repeat;
+  height:700px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* Footer */
+
+.layout_footer{
+  padding-top: 10px;
+  text-align: center;
+}
+.layout_footer footer {
+  background-color: var(--boxBackground);
+  box-shadow: 0px 0px 10px gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - */
+/* drop down navigation */
+.dr_nav ul {
+  background-color: var(--boxBackground);
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  text-align:center;
+}
+.dr_nav .nav_button {
+  display: inline-block;
+}
+.dr_nav li a, .nav_frontbutton {
+  background-color: var(--navButtonBackground);
+  display: inline-block;
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dr_nav li a:hover, .nav_button:hover {
+  background-color: var(--navBackgroundHover);
+}
+.dr_nav .nav_content {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  position: absolute;
+  background-color: var(--boxBackground);
+  z-index: 1;
+}
+.dr_nav .nav_content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align:left;
+}
+.dr_nav .nav_content a:hover {
+  background-color: var(--navBackgroundHover);
+}
+.dr_nav .nav_button:hover .nav_content {
+  display:block;
+}

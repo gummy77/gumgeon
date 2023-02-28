@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    </head>
+    
+    <body class="container">
+
+        <!-- Header -->
+        <div class="layout_header">
+            <header>
+                <a href="/" >The Gumgeon</a>
+            </header>
+        </div>
+
+        <!-- Navigation Bar-->
+        <div id="layout_nav" class = "layout_nav">
+            <ul>
+                <li class="nav_button">
+                    <a href="/" class="nav_frontbutton">Home</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+        $(function(){
+          $("#layout_nav").load("/static/nav.html");
+        });
+        </script>
+
+        <!-- Page content -->
+        <div class="layout_content">
+            <br>:]
+        </div>
+
+        <!-- Page Footer -->
+        <div id="layout_footer" class="layout_footer">
+            <footer>
+                helo there
+            </footer>
+        </div>
+        <script>
+        $(function(){
+            $("#layout_footer").load("/static/footer.html");
+        });
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "gumgeon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start":"node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gummydummy7/gumgeon.git"
+  },
+  "author": "gummy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gummydummy7/gumgeon/issues"
+  },
+  "homepage": "https://github.com/gummydummy7/gumgeon#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

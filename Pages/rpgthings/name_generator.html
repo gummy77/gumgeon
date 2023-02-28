@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="/static/namegen_stylesheet.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            function GenerateNames(){
+              var url = window.location.href.toString()
+              console.log(url)
+              if(!url.includes('?')){
+                $("#dissapearifnone").html("")
+              }else{
+                $.get("/api/"+window.location.search+"&c=10", (result) => {
+                  result = JSON.parse(result).join("<br>")
+                  $("#generate_target").html(result)
+                }, 'html')
+              }
+            }
+            window.onload = GenerateNames
+        </script>
+    </head>
+    
+    <body class="container">
+
+        <!-- Header -->
+        <div class="layout_header">
+            <header>
+                <a href="/" >Name Generators</a>
+            </header>
+        </div>
+
+        <!-- Navigation Bar-->
+        <div id="layout_nav" class="layout_nav">
+            <ul>
+                <li class="nav_button">
+                    <a href="/" class="nav_frontbutton">Home</a>
+                </li>
+            </ul>
+        </div>
+        <script>
+        $(function(){
+          $("#layout_nav").load("/static/nav.html");
+        });
+        </script>
+
+        <!-- Page content -->
+        <div class="layout_content">
+
+            <div class="dr_nav">
+                <ul>
+                    <li class="nav_button">
+                        <a href="/namegen/?t=human&st=na" class="nav_frontbutton">Human</a>
+                        <div class="nav_content">
+                            <a href="/namegen/?t=human&st=fe">feminine</a>
+                            <a href="/namegen/?t=human&st=ma">masculine</a>
+                            <a href="/namegen/?t=human&st=su">surname</a>
+                        </div>
+                    </li>
+                    <li class="nav_button">
+                        <a href="/namegen/?t=elf&st=na" class="nav_frontbutton">Elven</a>
+                        <div class="nav_content">
+                            <a href="/namegen/?t=elf&st=fe">feminine</a>
+                            <a href="/namegen/?t=elf&st=ma">masculine</a>
+                            <a href="/namegen/?t=elf&st=su">surname</a>
+                        </div>
+                    </li>
+                    <li class="nav_button">
+                        <a href="/namegen/?t=dwarf&st=na" class="dropbtn">Dwarf</a>
+                        <div class="nav_content">
+                            <a href="/namegen/?t=dwarf&st=fe">feminine</a>
+                            <a href="/namegen/?t=dwarf&st=ma">masculine</a>
+                            <a href="/namegen/?t=dwarf&st=su">surname</a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav_button">
+                        <a href="/namegen/?t=gnome&st=na" class="dropbtn">Gnome</a>
+                        <div class="nav_content">
+                            <a href="/namegen/?t=gnome&st=fe">feminine</a>
+                            <a href="/namegen/?t=gnome&st=ma">masculine</a>
+                            <a href="/namegen/?t=gnome&st=su">surname</a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+
+            <div class="namegen" id = "dissapearifnone">
+                <a href="javascript:void(0)" onclick="GenerateNames()" class="button">Generate</a>
+                <div class="namebox">
+                    <div class="names" id="generate_target">
+                        <a>names</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Footer -->
+        <div id="layout_footer" class="layout_footer">
+            <footer>
+                helo there
+            </footer>
+        </div>
+        <script>
+        $(function(){
+            $("#layout_footer").load("/static/footer.html");
+        });
+        </script>
+        
+    </body>
+</html>
