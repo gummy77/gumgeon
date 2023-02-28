@@ -56,7 +56,7 @@ module.exports.InitialiseGenerator = function(){
 
 function generateChains(data){
     var typeint = 0
-    Object.keys(data).forEach(function(type) {
+    Object.keys(data).forEach((type) => {
         MarkovChain[typeint.toString()] = {}
         var subtypeint = 0
         Object.keys(data[type]).forEach(function(subtype) {
@@ -69,7 +69,6 @@ function generateChains(data){
         })
         typeint ++
     })
-    
 }
 
 function generateChain(names){
@@ -110,7 +109,6 @@ exports.GenerateName = function (data) {
 function generateName (data) {
     
 //_type, _subtype, _count, _seed
-
 
     var o_subtype = _subtype;
     var dict_of_names = []
