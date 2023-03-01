@@ -55,8 +55,6 @@ exports.GenerateName = function (_data) {
         console.error("non-name data passed to name generator");
         return "error";
     }
-    // console.log("Name Generation Requested!");
-    // console.log(_data);
 
     return generateName(_data);
 }
@@ -67,28 +65,22 @@ function generateName (_data) {
     var count = _data.count
     //var seed = _data.seed
 
-    var dict_of_names = [] //not sure what any of this is for? probably needs a refactor
-    // if(subtype == "na" ){
-    //         dict_of_names = joinChains(MarkovChain[type])
-    // }else{
-        dict_of_names = MarkovChain[type][subtype]
-    //}
-
-    //console.log(`producing ${count} names with types: ${type}, ${subtype}`);
+    var dict_of_names = MarkovChain[type][subtype]
 
     var names = [];
+    var halfname = "";
     while(names.length < count){
         var combination = "___";
         var next_letter = "";
         var result = "";
-
+        
         while(true){
             var number_of_letters = dict_of_names[combination].length;
 
             var index = Math.round(Math.random()*(number_of_letters - 1));
             next_letter = dict_of_names[combination][index];
             if(next_letter == "_"){
-                break
+                break;
             } else {
                 result = result + next_letter;
                 combination = combination[1]+ combination[2] + next_letter;
@@ -96,7 +88,16 @@ function generateName (_data) {
         }
             
         if(!names.includes(result)){
-            names.push(result);
+            if(Math.random() <= 0.05 && subtype == "surname"){
+                halfname = result;
+            }else {
+                if(halfname != ''){
+                    names.push(result+"-"+halfname);
+                    halfname = "";
+                }else{
+                    names.push(result);
+                }
+            }
         }
     }
     return names;
