@@ -5,7 +5,15 @@
 
 .namegen {
   text-align: center;
-  padding: 10px;
+  padding: 0px;
+}
+
+.namegen .gentitle {
+  font-size: 175%;
+  text-align: center;
+  overflow: hidden;
+  height: max-content;
+  padding: 0px 0px 10px 0px;
 }
 
 .namegen .button {
