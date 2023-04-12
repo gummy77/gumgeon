@@ -26,6 +26,7 @@
 }
 .namegen .button a:hover, .button:hover {
   background-color: var(--navBackgroundHover);
+  transition-duration: 0.2s;
 }
 
 .namegen .namebox {

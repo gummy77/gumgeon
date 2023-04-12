@@ -7,7 +7,12 @@
 
 .container {
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
-  background-color: var(--pageBackground);
+  /*background-color: var(--pageBackground);*/
+  background-image: url("/static/images/bricks.jpg");
+  background-repeat: repeat;
+  background-size: 15%;
+  padding: 5px;
+  
 }
 
 /* - - - - - - - - - - - - - - - - - - - */
@@ -15,15 +20,19 @@
 
 .layout_header {
   padding-bottom: 0px;
+  width: 100%;
 }
 .layout_header header {
   background-color: var(--boxBackground);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+  margin: auto;
+  min-width: fit-content;
+  padding: 0px 15px 10px 15px;
   text-align: center;
-  box-shadow: 0px 0px 10px gray;
-  padding-bottom: 10px;
+  width: fit-content;
 }
 .layout_header a {
-
   text-decoration: none;
   font-size: 50px;
   color: #000000;
@@ -40,14 +49,18 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  padding: 10px;
 }
 .layout_nav ul {
   background-color: var(--boxBackground);
-  box-shadow: 0px 0px 10px gray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
   list-style-type: none;
+  margin: auto;
   overflow: hidden;
   padding: 0;
   text-align:center;
+  width: fit-content;
 }
 
 
@@ -56,29 +69,70 @@
 
 .layout_content {
   background-color: var(--boxBackground);
-  box-shadow: 0px 0px 10px gray;
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+  height: fit-content;
+  margin: auto;
   overflow: hidden;
-  min-height: 600px;
+  padding: 10px;
+  min-height: 200px;
+  min-width: 20%;
+  text-align: center;
+  width: fit-content;
 }
 .layout_content .amongus {
   background-image: url("/static/images/among-us.gif");
   background-repeat: repeat;
-  height:700px;
+  height:432px;
+  width: 768px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - */
 /* Footer */
 
 .layout_footer{
-  padding-top: 10px;
+  padding-top: 20px;
   text-align: center;
 }
 .layout_footer footer {
   background-color: var(--boxBackground);
-  box-shadow: 0px 0px 10px gray;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px black;
+  margin: auto;
+  padding: 10px;
+  width: fit-content;
+}
+
+/* Footer navigation */
+
+.footer_nav .footer_col {
+  width: fit-content;
+
+  padding: 0px 20px 10px 20px;
+  float: left;
+}
+
+.footer_nav .footer_col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+.footer_nav .footer_col a {
+  color: black;
+}
+.footer_nav .footer_col .desc {
+  font-size: 80%;
+  color: darkslategray;
+}
+.footer_nav .footer_col ul li a {
+  color: gray;
+  text-decoration: none;
+}
+
+.footer_nav .footer_col ul li a:hover {
+  color: darkgray;
+  transition: .2s;
 }
 
 /* - - - - - - - - - - - - - - - - - - - */
@@ -87,7 +141,7 @@
   background-color: var(--boxBackground);
   list-style-type: none;
   overflow: hidden;
-  padding: 0;
+  padding: 5px;
   text-align:center;
 }
 .dr_nav .nav_button {
@@ -97,11 +151,12 @@
   background-color: var(--navButtonBackground);
   display: inline-block;
   color: black;
-  padding: 14px 16px;
+  padding: 8px 16px;
   text-decoration: none;
 }
 .dr_nav li a:hover, .nav_button:hover {
   background-color: var(--navBackgroundHover);
+  transition-duration: 0.2s;
 }
 .dr_nav .nav_content {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -118,6 +173,7 @@
 }
 .dr_nav .nav_content a:hover {
   background-color: var(--navBackgroundHover);
+  transition-duration: 0.2s;
 }
 .dr_nav .nav_button:hover .nav_content {
   display:block;

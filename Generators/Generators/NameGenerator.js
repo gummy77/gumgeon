@@ -1,24 +1,24 @@
-let fs = require('fs')
+let fs = require('fs');
 
-var MarkovChain = {}
+var MarkovChain = {};
 
 module.exports.InitialiseGenerator = function(){
     fs.readFile("./Generators/data/names.json", 'utf8' , (err, rawdata) => {
         if (err) return console.error(err);
-        var data = JSON.parse(rawdata)
+        var data = JSON.parse(rawdata);
 
-        generateChains(data)
+        generateChains(data);
     });
 }
 
 function generateChains(data){
     Object.keys(data).forEach((type) => {
-        MarkovChain[type] = {}
+        MarkovChain[type] = {};
 
         Object.keys(data[type]).forEach(function(subtype) {
 
-            var chain = generateChain(data[type][subtype])
-            MarkovChain[type][subtype] = chain
+            var chain = generateChain(data[type][subtype]);
+            MarkovChain[type][subtype] = chain;
 
         })
     })
@@ -60,9 +60,9 @@ exports.GenerateName = function (_data) {
 }
 
 function generateName (_data) {
-    var type = _data.type
-    var subtype = _data.subtype
-    var count = _data.count
+    var type = _data.type;
+    var subtype = _data.subtype;
+    var count = _data.count;
     //var seed = _data.seed
 
     var dict_of_names = MarkovChain[type][subtype]
