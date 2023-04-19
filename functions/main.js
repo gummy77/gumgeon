@@ -1,24 +1,22 @@
+const functions = require('firebase-functions');
 const express = require('express');
-const functions = require("firebase-functions");
+const favicon = require('serve-favicon');
 const generatorHandler = require('./Generators/GeneratorHandler.js');
-
-const port = 3000;
 
 var server = express();
 
-// app.listen(port, () => {
-//     generatorHandler.InitialiseGenerators();
-//     console.log(`listening at http://localhost:${port}`);
-// })
+server.use(favicon(__dirname + '/favicon.ico')); 
+
 server.use('/static', express.static('static'))
     .get('/', (req, res) => {res.sendFile(__dirname + '/Pages/home.html')})
     .get('/amogus', (req, res) => {res.sendFile(__dirname + '/Pages/amogus.html')})
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings.html')})
     .get('/namegen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html')})
     .get('/about', (req, res) => {res.sendFile(__dirname + '/Pages/about.html')})
-    .get('/contact', (req, res) => {res.sendFile(__dirname + '/Pages/contact.html')});
+    .get('/contact', (req, res) => {res.sendFile(__dirname + '/Pages/contact.html')})
+    .get('/template', (req,res) => {res.sendFile(__dirname + "/Pages/template.html")});
 
-    server.route('/api')
+server.route('/api')
 .get((req, res) => {
     var data = req.query;
     var result = generatorHandler.GenerateFrom(data);
@@ -26,13 +24,7 @@ server.use('/static', express.static('static'))
     res.send(result);
 });
 
-// app.use((req, res) => {
-//     console.log("someone tried to access: ");
-//     res.status(404);
-//     res.sendFile(__dirname+'/Pages/404.html');
-// });
 generatorHandler.InitialiseGenerators();
 exports.app = functions.https.onRequest(server);
-
 
 

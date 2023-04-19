@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>sussy</title>
-        <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <title>Gumgeon - sussy</title>
+        <script src="/static/builder.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
     </head>
     
     <body class="container">
@@ -16,23 +16,7 @@
         </div>
 
         <!-- Navigation Bar-->
-        <div id="layout_nav" class = "layout_nav">
-            <div class="dr_nav">
-                <ul>
-                    <li class="nav_button">
-                        <a class="nav_frontbutton">Home</a>
-                        <div class="nav_content">
-                            <a href="/">Home</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <script>
-        $(function(){
-          $("#layout_nav").load("/static/nav.html");
-        });
-        </script>
+        <navigation-bar-component></navigation-bar-component>
 
         <!-- Page content -->
         <div class="layout_content">
@@ -41,16 +25,7 @@
         </div>
 
         <!-- Page Footer -->
-        <div id="layout_footer" class="layout_footer">
-            <footer>
-                helo there
-            </footer>
-        </div>
-        <script>
-        $(function(){
-            $("#layout_footer").load("/static/footer.html");
-        });
-        </script>
+        <footer-component></footer-component>
         
     </body>
 </html>
