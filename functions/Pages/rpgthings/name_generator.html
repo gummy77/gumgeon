@@ -5,6 +5,7 @@
         <script src="/static/builder.js"></script>
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/namegen_stylesheet.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         
         <script type="text/javascript">
             var curtype = null
@@ -18,17 +19,12 @@
                     type = curtype;
                     subtype = cursubtype;
                 }
-                if(curtype == null || type == null){
-                    $("#dissapearifnone").hide();
-                }else{
-                    $("#dissapearifnone").show();
-                    $("#gentitle").html(`${toUpper(type)} ${toUpper(subtype)}`);
+                $("#gentitle").html(`${toUpper(type)} ${toUpper(subtype)}`);
 
-                    $.get(`/api/?gentype=name&type=${type}&subtype=${subtype}&count=10`, (result) => {
-                        result = JSON.parse(result).join("<br>");
-                        $("#generate_target").html(result);
-                    }, 'html')
-                }
+                $.get(`/api/?gentype=name&type=${type}&subtype=${subtype}&count=10`, (result) => {
+                    result = JSON.parse(result).join("<br>");
+                    $("#generate_target").html(result);
+                }, 'html')
             }
             function toUpper(str) {
                 return str.charAt(0).toUpperCase() + str.slice(1);
@@ -89,12 +85,12 @@
                 </ul>
             </div>
 
-            <div class="namegen" id = "dissapearifnone">
-                <b><div class="gentitle" id="gentitle">Generating...</div></b>
+            <div class="namegen">
+                <b><div class="gentitle" id="gentitle">select type to generate</div></b>
                 <a href="javascript:void(0)" onclick="GenerateNames('gen', 'gen')" class="button">Generate</a>
                 <div class="namebox">
                     <div class="names" id="generate_target">
-                        <a>names</a>
+                        <a></a>
                     </div>
                 </div>
             </div>
