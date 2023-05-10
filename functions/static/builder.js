@@ -12,9 +12,15 @@ class Navigation extends HTMLElement {
                         <a href="/" class="nav_frontbutton">Home</a>
                     </li>
                     <li class="nav_button">
+                        <a href="/minecraft" class="nav_frontbutton">Minecraft</a>
+                        <div class="nav_content">
+                            <a href="/minecraft/tbh">tbh</a>
+                        </div>
+                    </li>
+                    <li class="nav_button">
                         <a href="/rpgthings" class="nav_frontbutton">RPG Things</a>
                         <div class="nav_content">
-                            <a href="/namegen">Name Generators</a>
+                            <a href="/rpgthings/namegen">Name Generators</a>
                         </div>
                     </li>
                     <li class="nav_button">
@@ -58,6 +64,13 @@ class Footer extends HTMLElement {
                             <li><a href="/about">about us</a></li>
                         </ul>
                     </div>
+                    <div class="footer_col">
+                    <a>Minecraft</a>
+                    <ul>
+                        <li><a href="https://minecraft.net">minecraft</a></li>
+                        <li><a href="https://modrinth.com/user/gummydummy77">modrinth</a></li>
+                    </ul>
+                </div>
                     <div class="footer_col">
                         <a>Resources</a>
                         <ul>
