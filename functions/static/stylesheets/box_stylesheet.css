@@ -1,12 +1,9 @@
 /* - - - - - - - - - - - - - - - - - - - */
 /* Boxes */
 
-.sel_box .box_section{
+.sel_box .box_section, .sel_box .box_section_link{
     display: inline-block;
     padding: 10px;
-}
-
-.sel_box .box_section .box_content, .sel_box .box_section .box_content_link a{
     background-color: var(--boxBackground);
     border-radius: 10px;
     box-shadow: 0px 0px 10px gray;
@@ -16,7 +13,13 @@
     color: black;
 }
 
-.sel_box .box_content_link a:hover {
+.sel_box .box_section .box_content, .sel_box .box_section_link a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sel_box .box_section_link:hover {
     background-color: var(--navBackgroundHover);
     transition-duration: 0.2s;
 }
