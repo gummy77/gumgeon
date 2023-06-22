@@ -38,7 +38,7 @@
 .namegen .namebox .names {
   font-size: 150%;
   display: inline-block;
-  background-color: var(--pageBackground);
+  background-color: var(--navButtonBackground);
   width: max-content;
   min-width: 200px;
   padding: 10px;

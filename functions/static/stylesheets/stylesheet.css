@@ -1,40 +1,52 @@
 :root {
-  --pageBackground: rgb(255, 233, 245);
+  --pageBackground: rgb(163, 127, 147);
   --boxBackground: rgb(255, 188, 225);
   --navButtonBackground: rgb(255, 173, 218);
   --navBackgroundHover: rgb(255, 123, 196);
 }
 
+html {
+  cursor: url("/static/images/cur.png"), default;
+}
+
 .container {
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
-  /*background-color: var(--pageBackground);*/
-  background-image: url("/static/images/bricks.jpg");
+  background-color: var(--pageBackground);
+  /* background-image: url("/static/images/bricks.jpg");
   background-repeat: repeat;
-  background-size: 15%;
-  padding: 5px;
-  
+  background-size: 15%; */
+  margin: 0;
+}
+
+a {
+  cursor: url("/static/images/cur.png"), default;
+}
+
+.sparkles {
+  overflow: hidden;
+  outline: #000000;
+  outline-style: solid;
+  outline-width: 2px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - */
 /* header */
 
 .layout_header {
-  padding-bottom: 0px;
   width: 100%;
 }
 .layout_header header {
-  background-color: var(--boxBackground);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px black;
+
   margin: auto;
   min-width: fit-content;
-  padding: 0px 15px 10px 15px;
+  /* padding: 0px 15px 10px 15px; */
   text-align: center;
   width: fit-content;
 }
 .layout_header a {
   text-decoration: none;
   font-size: 50px;
+  font-stretch: wider;
   color: #000000;
 }
 
@@ -49,18 +61,16 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  padding: 10px;
 }
 .layout_nav ul {
   background-color: var(--boxBackground);
-  border-radius: 10px;
   box-shadow: 0px 0px 20px black;
-  list-style-type: none;
-  margin: auto;
+  /* list-style-type: none; */
+  /* margin: auto; */
   overflow: hidden;
-  padding: 0;
-  text-align:center;
-  width: fit-content;
+  /* padding: 0; */
+  /* text-align:center; */
+  /* width: 100%; */
 }
 
 
@@ -69,19 +79,25 @@
 
 .layout_content {
   background-color: var(--boxBackground);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px black;
+  background-clip: padding-box;
+
+  border-width: 50px;
+  border-style: solid;
+  border-image: url("/static/images/bricks-border.png") 33 round;
+
+
+  /* box-shadow: 0px 0px 20px black; */
   height: fit-content;
   margin: auto;
   overflow: hidden;
-  padding: 10px;
+  padding: 15px;
   min-height: 200px;
   min-width: 20%;
   text-align: center;
   width: fit-content;
 }
 .layout_content .amongus {
-  background-image: url("/static/images/among-us.gif");
+  background-image: url("https://raw.githubusercontent.com/gummydummy77/gumgeon/master/functions/static/images/among-us.gif");
   background-repeat: repeat;
   height:432px;
   width: 768px;
@@ -91,15 +107,18 @@
 /* Footer */
 
 .layout_footer{
-  padding-top: 20px;
+  padding: 20px;
   text-align: center;
 }
 .layout_footer footer {
-  background-color: var(--boxBackground);
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px black;
+  border: 40px solid transparent;
+
+  border-image-source:url("/static/images/footer-border.png"); 
+  border-image-repeat: round;
+  border-image-slice: 24 fill;
+
   margin: auto;
-  padding: 10px;
+  padding: 0;
   width: fit-content;
 }
 
@@ -107,7 +126,6 @@
 
 .footer_nav .footer_col {
   width: fit-content;
-
   padding: 0px 20px 10px 20px;
   float: left;
 }
@@ -123,22 +141,23 @@
 }
 .footer_nav .footer_col .desc {
   font-size: 80%;
-  color: darkslategray;
+  color: lightgray;
 }
 .footer_nav .footer_col ul li a {
-  color: gray;
+  color: darkgray;
   text-decoration: none;
 }
 
 .footer_nav .footer_col ul li a:hover {
-  color: darkgray;
+  color: darkslategray;
   transition: .2s;
 }
 
 /* - - - - - - - - - - - - - - - - - - - */
 /* drop down navigation */
 .dr_nav ul {
-  background-color: var(--boxBackground);
+  /* background-color: var(--boxBackground); */
+  background-image: url("/static/images/bricks-nav.png");
   list-style-type: none;
   overflow: hidden;
   padding: 5px;
@@ -146,12 +165,16 @@
 }
 .dr_nav .nav_button {
   display: inline-block;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  font-size: 17px;
 }
 .dr_nav li a, .nav_frontbutton {
   background-color: var(--navButtonBackground);
   display: inline-block;
   color: black;
-  padding: 8px 16px;
+  padding: 3px 5px;
   text-decoration: none;
 }
 .dr_nav li a:hover, .nav_button:hover {
@@ -160,10 +183,13 @@
 }
 .dr_nav .nav_content {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
   display: none;
   position: absolute;
   background-color: var(--boxBackground);
-  z-index: 1;
+  
 }
 .dr_nav .nav_content a {
   color: black;

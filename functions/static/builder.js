@@ -1,3 +1,15 @@
+class Scripts extends HTMLElement {
+    constructor() {
+        super();
+    }
+  
+    connectedCallback() {
+        this.innerHTML = `
+            <div class="sparkles" id="sparkles"></div>
+        `;
+    }
+}
+
 class Navigation extends HTMLElement {
     constructor() {
         super();
@@ -21,6 +33,7 @@ class Navigation extends HTMLElement {
                         <a href="/rpgthings" class="nav_frontbutton">RPG Things</a>
                         <div class="nav_content">
                             <a href="/rpgthings/namegen">Name Generators</a>
+                            <a href="/rpgthings/namegen">Name Generators 2</a>
                         </div>
                     </li>
                     <li class="nav_button">
@@ -94,6 +107,7 @@ class Footer extends HTMLElement {
         `;
     }
 }
+customElements.define('scripts-component', Scripts)
 customElements.define('navigation-bar-component', Navigation);  
 customElements.define('footer-component', Footer);
   
