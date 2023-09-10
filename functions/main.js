@@ -5,14 +5,27 @@ const generatorHandler = require('./Generators/GeneratorHandler.js');
 var server = express();
 
 server.use('/static', express.static('static'))
+    // Home
     .get('/', (req, res) => {res.sendFile(__dirname + '/Pages/home.html')})
+
+    // Minecraft
     .get('/minecraft', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/minecraft.html')})
     .get('/minecraft/tbh', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/tbh.html')})
+
+    // RPG Things
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/rpgthings.html')})
     .get('/rpgthings/namegen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html')})
+
+    //  amogus
     .get('/amogus', (req, res) => {res.sendFile(__dirname + '/Pages/amogus.html')})
-    .get('/about', (req, res) => {res.sendFile(__dirname + '/Pages/about.html')})
+
+    // About pages
+    .get('/about', (req, res) => {res.sendFile(__dirname + '/Pages/About/about.html')})
+    .get('/about/pronouns', (req, res) => {res.sendFile(__dirname + '/Pages/About/pronouns.html')})
+
+    // Contact pages
     .get('/contact', (req, res) => {res.sendFile(__dirname + '/Pages/contact.html')})
+
     .get('/template', (req,res) => {res.sendFile(__dirname + "/Pages/template.html")});
 
 server.route('/api')

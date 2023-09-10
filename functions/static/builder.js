@@ -41,6 +41,9 @@ class Navigation extends HTMLElement {
                     </li>
                     <li class="nav_button">
                         <a href="/about" class="nav_frontbutton">About</a>
+                        <div class="nav_content">
+                            <a href="/about/pronouns">Pronouns</a>
+                        </div>
                     </li>
                     <li class="nav_button">
                         <a href="/contact" class="nav_frontbutton">Contact</a>
@@ -101,7 +104,7 @@ class Footer extends HTMLElement {
                     </div>
                 </div>
             
-                Hosted on Firebase! 
+                Gumgeon 1.0.0 - x - Hosted on Firebase! 
             </footer>
         </div>
         `;
