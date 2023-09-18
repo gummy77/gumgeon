@@ -17,7 +17,8 @@ server.use('/static', express.static('static'))
     .get('/rpgthings/namegen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html')})
 
     //  amogus
-    .get('/amogus', (req, res) => {res.sendFile(__dirname + '/Pages/amogus.html')})
+    .get('/art', (req, res) => {res.sendFile(__dirname + '/Pages/art/art.html')})
+    
 
     // About pages
     .get('/about', (req, res) => {res.sendFile(__dirname + '/Pages/About/about.html')})
@@ -26,6 +27,8 @@ server.use('/static', express.static('static'))
     // Contact pages
     .get('/contact', (req, res) => {res.sendFile(__dirname + '/Pages/contact.html')})
 
+
+    .get('/amogus', (req, res) => {res.sendFile(__dirname + '/Pages/amogus.html')})
     .get('/template', (req,res) => {res.sendFile(__dirname + "/Pages/template.html")});
 
 server.route('/api')

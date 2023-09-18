@@ -18,6 +18,11 @@
     color: black;
 }
 
+.sel_box .box_section .box_content img, .sel_box .box_section_link img{
+    max-width: 450px;
+    max-height: 450px;
+}
+
 .sel_box .box_section_link:hover {
     background-color: var(--navBackgroundHover);
     transition-duration: 0.2s;
