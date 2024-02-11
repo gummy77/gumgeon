@@ -103,7 +103,7 @@ class Footer extends HTMLElement {
                     </div>
                 </div>
             
-                Gumgeon 1.1.3 - x - Hosted on Firebase! 
+                Gumgeon 1.2.0 - x - Hosted on Firebase! 
             </footer>
         </div>
         `;
