@@ -11,6 +11,7 @@ server.use('/static', express.static('static'))
     // Minecraft
     .get('/minecraft', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/minecraft.html')})
     .get('/minecraft/tbh', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/tbh.html')})
+    .get('/minecraft/basic', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/basic.html')})
 
     // RPG Things
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/rpgthings.html')})

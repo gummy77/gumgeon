@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gumgeon - TbhMod</title>
+        <title>Gumgeon - Some Mod</title>
         <script src="/static/builder.js"></script>
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
         <script type="text/javascript" src="/static/sparkles.js"></script>
         <scripts-component></scripts-component>
         <script>
             function openTab(evt, tabName) {
-                
                 // Declare all variables
                 var i, tabcontent, tablinks;
 
@@ -28,10 +27,7 @@
                 document.getElementById(tabName).style.display = "block";
                 evt.currentTarget.className += " active";
             }
-            document.getElementById("defaultOpen").click();
-        </script>
-        <script>
-            document.getElementById("defaultOpen").click();
+            // object.onload = openTab(event, 'Home');
         </script>
     </head>
     
@@ -40,7 +36,7 @@
         <!-- Header -->
         <div class="layout_header">
             <header>
-                <a href="/" >TbhMod</a>
+                <a href="/" >Some Mod</a>
             </header>
         </div>
 
@@ -49,8 +45,6 @@
 
         <!-- Page content -->
         <div class="layout_content">
-
-            
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
                 <button class="tablinks" onclick="openTab(event, 'Crafting')">Crafting</button>
@@ -61,45 +55,21 @@
             <div id="Home" class="tabcontent">
                 <img class="mctbh" src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/tbh_banner.png"></img>
                 <h1>Yippee!</h1>
-
-                adds a tamable tbh creature to minecraft<br>
-                <br>
-
-                Welcome to the TBHmod Wiki! <br>
-                Theres not much here as the mod is pretty small... <br>
-        
-                <br>
-                <img src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/swarm_banner.png">
             </div>
             
             <div id="Crafting" class="tabcontent">
                 <img class="mctbh" src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/tbh_banner.png"></img>
                 <h1>Crafting</h1>
-                WIP (im lazy)
             </div>
             
             <div id="Mobs" class="tabcontent">
                 <img class="mctbh" src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/tbh_banner.png"></img>
                 <h1>Mobs</h1>
-                <br>
-                TBH
-                <br>
-                <img src="https://cdn.modrinth.com/data/TPbGyYhD/images/19456e8ed6ddfaf8132288edf36907778c5daf7c.png">
-                <br><br>
-                BTW
-                <br>
-                <img src="https://cdn.modrinth.com/data/TPbGyYhD/images/cbf2165e2ba0da2db50237223f1bd2550af4171c.png">
-                
             </div>
 
             <div id="Info" class="tabcontent">
                 <img class="mctbh" src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/tbh_banner.png"></img>
                 <h1>Info</h1>
-
-                <h2>License</h2>
-                I use the GPL 3.0 license, feel free to modify and use the code I have written!<br>
-                though please do credit me in anything you use from it! <br>
-                Feel free to use this in a modpack, but again, credit me! 
             </div>
         </div>
 
