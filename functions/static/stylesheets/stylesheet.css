@@ -135,6 +135,7 @@ a:hover {
   align-items: center;
 
   width: fit-content;
+  padding: 10px;
 }
 
 .box_content {
@@ -224,6 +225,73 @@ h3, h4 {
   gap: 30px;
 }
 
+/* Family Page */
+
+.family-sect {
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: center;
+}
+
+.family {
+  display:grid;
+  grid-template-columns: auto auto auto;
+
+  align-items: center;
+
+  justify-content: center;
+  gap: 20px;
+  /* max-width: 90vw; */
+}
+
+.member img {
+  width: 10vw;
+  float: left;
+}
+
+.member {
+  /* display: block; */
+  /* flex-direction: column; */
+
+  gap: 30px;
+  width: 25vw;
+  overflow: hidden;
+  font-size:larger;
+
+  background-color:rgb(252, 197, 255);
+  border: rgb(204, 126, 181);
+  
+  border-radius: 30px;
+  border-width: 10px;
+  border-style:solid;
+}
+
+@media only screen and (max-width: 1500px) {
+  .family {
+    grid-template-columns: auto auto;
+  }
+  .member img {
+    width: 20vw;
+  }
+  .member {
+    width: 40vw;
+    font-size: large;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .family {
+    grid-template-columns: auto;
+  }
+  .member img {
+    width: 20vw;
+  }
+  .member {
+    width: 60vw;
+    font-size: large;
+  }
+}
+
 /* Wiki Tabs */
 
  /* Style the tab */
@@ -273,7 +341,8 @@ h3, h4 {
   
 } 
 .tabcontent img {
-  width: 50vw;
+  width: min-content;
+  max-width: 50vw;
   object-fit:scale-down;
 }
 
@@ -306,7 +375,7 @@ footer {
 .footer_nav{
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 25px;
 }
 
 .footer_nav .footer_col {
@@ -343,7 +412,7 @@ footer {
   .footer_nav{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
   }
 
 }

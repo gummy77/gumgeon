@@ -31,7 +31,12 @@ class Navigation extends HTMLElement {
                         <a href="/minecraft" class="nav_frontbutton">Minecraft ↓</a>
                         <div class="nav_content">
                             <a href="/minecraft/tbh">tbh</a>
+                            <a href="/minecraft/corkboard">corkboard</a>
                         </div>
+                    </li>
+                    <li class="nav_button">
+                        <a href="/projects" class="nav_frontbutton">Projects</a>
+
                     </li>
                     <li class="nav_button">
                         <a href="/rpgthings" class="nav_frontbutton">RPG Things ↓</a>
@@ -46,6 +51,7 @@ class Navigation extends HTMLElement {
                         <a href="/about" class="nav_frontbutton">About ↓</a>
                         <div class="nav_content">
                             <a href="/about/pronouns">Pronouns</a>
+                            <a href="/about/family">Plushies</a>
                         </div>
                     </li>
                     <li class="nav_button">
@@ -81,6 +87,8 @@ class Footer extends HTMLElement {
                         <p>About us</p>
                         <ul>
                             <li><a href="/about">about us</a></li>
+                            <li><a href="https://github.com/gummy77">github</a></li>
+                            <li><a href="https://liberalgummy.itch.io/">itch.io</a></li>
                         </ul>
                     </div>
                     <div class="footer_col">

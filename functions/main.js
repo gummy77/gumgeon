@@ -11,7 +11,10 @@ server.use('/static', express.static('static'))
     // Minecraft
     .get('/minecraft', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/minecraft.html')})
     .get('/minecraft/tbh', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/tbh.html')})
+    .get('/minecraft/corkboard', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/corkboard.html')})
     .get('/minecraft/basic', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/basic.html')})
+
+    .get('/projects', (req, res) => {res.sendFile(__dirname + '/Pages/projects.html')})
 
     // RPG Things
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/rpgthings.html')})
@@ -24,6 +27,7 @@ server.use('/static', express.static('static'))
     // About pages
     .get('/about', (req, res) => {res.sendFile(__dirname + '/Pages/About/about.html')})
     .get('/about/pronouns', (req, res) => {res.sendFile(__dirname + '/Pages/About/pronouns.html')})
+    .get('/about/family', (req, res) => {res.sendFile(__dirname + '/Pages/About/friends.html')})
 
     // Contact pages
     .get('/contact', (req, res) => {res.sendFile(__dirname + '/Pages/contact.html')})

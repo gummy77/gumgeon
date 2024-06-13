@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gumgeon - Some Mod</title>
+        <script src="/static/builder.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
+        <script type="text/javascript" src="/static/sparkles.js"></script>
+        <scripts-component></scripts-component>
+        <script>
+            function openTab(evt, tabName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            // object.onload = openTab(event, 'Home');
+        </script>
+    </head>
+    
+    <body class="container" onload="openTab(event, 'Home')">
+
+        <!-- Header -->
+        <div class="layout_header">
+            <header>
+                <a href="/" >Some Mod</a>
+            </header>
+        </div>
+
+        <!-- Navigation Bar-->
+        <navigation-bar-component></navigation-bar-component>
+
+        <!-- Page content -->
+        <div class="layout_content">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+                <button class="tablinks" onclick="openTab(event, 'Crafting')">Crafting</button>
+                <button class="tablinks" onclick="openTab(event, 'Info')">Info</button>
+            </div>
+
+            <div id="Home" class="tabcontent">
+                <img class="mctbh" src="https://cdn.modrinth.com/data/cached_images/5eddd667647ffea0c91fe36b1597fb7ed077959d.png"></img>
+                <br> <br>
+                Have you ever wanted to take notes inside of minecraft? <br>
+                well, now you can!! <br>
+                <br>
+                <h2>Features</h2>
+                Adds the Corkboard block. the centerpeice of this mod. <br>
+                Adds the Note. A writable peice of paper that can be displayed on the Corkboard!
+            </div>
+            
+            <div id="Crafting" class="tabcontent">
+                <img class="mctbh" src="https://raw.githubusercontent.com/gummydummy77/TbhMod/master/docs/tbh_banner.png"></img>
+                <h1>Crafting</h1>
+
+                Corkboard: <br>
+                <img src="https://cdn.modrinth.com/data/cached_images/a2c3eecc6de51c26d14137436be956b110e48c4f.png">
+                <br>
+                Note: <br>
+                <img src="https://cdn.modrinth.com/data/cached_images/9909f203ad9ea27fbd79892b009f4455b869cfe8.png">
+            </div>
+
+            <div id="Info" class="tabcontent">
+                <img class="mctbh" src="https://cdn.modrinth.com/data/cached_images/5eddd667647ffea0c91fe36b1597fb7ed077959d.png"></img>
+                <h1>Info</h1>
+
+                <h2>License</h2>
+                I use the GPL 3.0 license, feel free to modify and use the code I have written!<br>
+                though please do credit me in anything you use from it! <br>
+                Feel free to use this in a modpack, but again, credit me! 
+            </div>
+        </div>
+
+        <!-- Page Footer -->
+        <footer-component></footer-component>
+        
+    </body>
+</html>
