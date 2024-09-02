@@ -67,7 +67,7 @@ a:hover {
 }
 
 .layout_header a:hover {
-  color: #3e6dd4;
+  color: #681779;
 }
 
 
@@ -291,6 +291,59 @@ h3, h4 {
     font-size: large;
   }
 }
+
+/* Blog Page */
+
+.blog-sect {
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: center;
+}
+
+.blogs {
+  display:grid;
+  grid-template-columns: auto auto auto;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.blog {
+  /* display: block; */
+  /* flex-direction: column; */
+
+  width: 80vw;
+  padding: 1%;
+  overflow: hidden;
+  font-size: larger;
+
+  border: rgb(204, 126, 181);
+  
+  border-width: 10px;
+  border-style:solid;
+}
+
+@media only screen and (max-width: 1500px) {
+  .blogs {
+    grid-template-columns: auto auto;
+  }
+  .blog {
+    width: 80vw;
+    font-size: large;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .blogs {
+    grid-template-columns: auto;
+  }
+  .blog {
+    width: 90vw;
+    font-size: large;
+  }
+}
+
 
 /* Wiki Tabs */
 

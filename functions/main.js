@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const generatorHandler = require('./Generators/GeneratorHandler.js');
+const pageHandler = require('./DynamicPages/DynamicPageHandler.js');
 
 var server = express();
 
@@ -15,6 +16,8 @@ server.use('/static', express.static('static'))
     .get('/minecraft/basic', (req, res) => {res.sendFile(__dirname + '/Pages/minecraft/basic.html')})
 
     .get('/projects', (req, res) => {res.sendFile(__dirname + '/Pages/projects.html')})
+
+    .get('/blogs', (req, res) => {res.sendFile(__dirname + '/Pages/blogs.html')})
 
     // RPG Things
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/rpgthings.html')})
@@ -44,7 +47,25 @@ server.route('/api')
     res.send(result);
 });
 
+server.route('/api/blogs')
+.get((req, res) => {
+    var data = req.query;
+    if(data.isShort){
+        pageHandler.GetBlogPosts(data).then((result) => {
+            if(result == "err") return res.sendStatus(500);
+            res.send(result);
+        });
+    } else {
+        pageHandler.GetBlogs(data).then((result) => {
+            if(result == "err") return res.sendStatus(500);
+            res.send(result);
+        });
+    }
+});
+
+
 generatorHandler.InitialiseGenerators();
+pageHandler.InitialiseHandler();
 exports.app = functions.https.onRequest(server);
 
 

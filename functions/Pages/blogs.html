@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gumgeon</title>
+        <title>Gumgeon - Blogs</title>
         <script src="/static/builder.js"></script>
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
         <script type="text/javascript" src="/static/sparkles.js"></script>
-        <scripts-component></scripts-component>
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script type>
             function LoadBlogs(evt){
                 
-                $("#blogs").html("Loading..");
+                $("#blogposts").html("Loading..");
 
-                $.get(`/api/blogs?isShort=true&count=5`, (result) => {
-                    $("#blogs").html(result);
+                $.get(`/api/blogs?count=10`, (result) => {
+                    $("#blogposts").html(result);
                 }, 'html')
             }
         </script>
     </head>
-    <!-- onload="LoadBlogs(event)" -->
-    <body >
+    
+    <body class="container" onload="LoadBlogs(event)">
 
+        <scripts-component></scripts-component> 
 
         <!-- Header -->
         <div class="layout_header">
             <header>
-                <a href="/" >The Gumgeon</a>
+                <a href="/" >Blog Posts</a>
             </header>
         </div>
 
@@ -35,18 +35,11 @@
 
         <!-- Page content -->
         <div class="layout_content">
-                <h3>Hello!!</h3>
-                <h4>Welcome to my website!</h4>
-                <p>There's not much here on this page right now,<br> so check out everything on the navigation up top!</p>
-
-                <div class="homeblogs">
-                    <div id="blogs"></div>
-                </div>
+            <div id="blogposts"></div>
         </div>
+
+        <!-- Page Footer -->
+        <footer-component></footer-component>
         
-
-
-            <!-- Page Footer -->
-            <footer-component></footer-component>
     </body>
 </html>

@@ -35,6 +35,10 @@ class Navigation extends HTMLElement {
                         </div>
                     </li>
                     <li class="nav_button">
+                        <a href="/blogs" class="nav_frontbutton">Blog Posts</a>
+
+                    </li>
+                    <li class="nav_button">
                         <a href="/projects" class="nav_frontbutton">Projects</a>
 
                     </li>
