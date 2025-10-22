@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gumgeon - WebGPU Planet Generator</title>
+        <script src="/static/builder.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/stylesheet.css">
+        <link rel="stylesheet" href="/static/webgpu/planetgen/style.css">
+        <script src="/static/webgpu/planetgen/rendering/gl-matrix-min.js"></script>
+        <script type="module" src="/static/webgpu/planetgen/core/webGPU.js"></script>
+    </head>
+
+    <body class="container">
+
+        <scripts-component></scripts-component> 
+
+        <!-- Header -->
+        <div class="layout_header">
+            <header>
+                <a href="/" >WebGPU Planet Generator</a>
+            </header>
+        </div>
+
+        <!-- Navigation Bar-->
+        <navigation-bar-component></navigation-bar-component>
+
+        <!-- Page content -->
+        <div class="layout_content">
+            <canvas width="800" height="450" id="page" tabindex='2'></canvas>
+            <br>
+            <div id="fps">FPS: 10</div>
+            <div id="sim">Simulation: 0%</div>
+            <br>
+            <div class="slidecontainer">
+                <input type="range" list="tickmarks" min="0" max="7" value="7" class="slider" id="displayType" oninput="updateSettings()" style="width: 100%;">
+                <datalist id="tickmarks" style="display: flex; justify-content: space-between;">
+                    <option value="0" label="Plates"></option>
+                    <option value="1" label="Height"></option>
+                    <option value="2" label="Temperature"></option>
+                    <option value="3" label="Humidity"></option>
+                    <option value="4" label="Plate Boundaries"></option>
+                    <option value="5" label="Ores"></option>
+                    <option value="6" label="Biomes"></option>
+                    <option value="7" label="Rendered"></option>
+                </datalist> 
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="3d" checked />
+                <label for="3d">Planet View</label>
+            </div>
+            <br>
+            <div>
+                <h3>Controls:</h3>
+                Hold Mouse + Drag = Rotate <br>
+                Hold Middle Mouse + Drag = Zoom <br>
+                Hold Shift + Mouse + Drag = Translate (only in map view) <br>
+                <h3>Notes:</h3>
+                The performance will likely be bad unless you have a pretty powerful GPU. <br>
+                Performance will improve a lot after the simulation / generation is complete. <br>
+                Your browser & GPU must support WebGPU, Check the browser logs for more info. <br>
+                Thanks for trying it out!
+            </div>
+        </div>
+
+        <!-- Page Footer -->
+        <footer-component></footer-component>
+        
+    </body>
+</html>

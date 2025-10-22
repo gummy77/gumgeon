@@ -46,16 +46,18 @@ class Navigation extends HTMLElement {
                         <a href="/rpgthings" class="nav_frontbutton">RPG Things ↓</a>
                         <div class="nav_content">
                             <a href="/rpgthings/namegen">Name Generators</a>
+                            <a href="/rpgthings/planetgen">WebGPU Planet Generator</a>
                         </div>
                     </li>
+                    <!--
                     <li class="nav_button">
                         <a href="/art" class="nav_frontbutton">Art</a>
                     </li>
+                    -->
                     <li class="nav_button">
                         <a href="/about" class="nav_frontbutton">About ↓</a>
                         <div class="nav_content">
                             <a href="/about/pronouns">Pronouns</a>
-                            <a href="/about/family">Plushies</a>
                         </div>
                     </li>
                     <li class="nav_button">
@@ -119,7 +121,7 @@ class Footer extends HTMLElement {
                     </div>
                 </div>
                 <br><br>
-                Gumgeon 1.3.0 - x - Hosted on Firebase!
+                Gumgeon 1.4.0 - x - Hosted on Firebase!
             </footer>
         </div>
         `;

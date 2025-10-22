@@ -22,6 +22,7 @@ server.use('/static', express.static('static'))
     // RPG Things
     .get('/rpgthings', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/rpgthings.html')})
     .get('/rpgthings/namegen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/name_generator.html')})
+    .get('/rpgthings/planetgen', (req, res) => {res.sendFile(__dirname + '/Pages/rpgthings/planet_generator.html')})
 
     //  amogus
     .get('/art', (req, res) => {res.sendFile(__dirname + '/Pages/art/art.html')})
@@ -37,7 +38,7 @@ server.use('/static', express.static('static'))
 
 
     .get('/amogus', (req, res) => {res.sendFile(__dirname + '/Pages/amogus.html')})
-    .get('/template', (req,res) => {res.sendFile(__dirname + "/Pages/template.html")});
+    .get('/template', (req,res) => {res.sendFile(__dirname + "/Pages/template.html")})
 
 server.route('/api')
 .get((req, res) => {

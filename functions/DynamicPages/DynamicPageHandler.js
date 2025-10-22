@@ -15,7 +15,7 @@ async function collectFiles(){
     return new Promise(async (resolve, reject) => {
         fs.readdir("./DynamicPages/pages/", async (err, files) => {
             var data = [];
-
+            files.sort();
             var counter = files.length;
             files.forEach(file => {
                 Readfile("./DynamicPages/pages/"+file).then((filedata) =>{

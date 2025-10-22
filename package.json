@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "firebase-functions": "^5.0.1"
+    "firebase-functions": "^5.0.1",
+    "node": "^25.0.0"
   }
 }
