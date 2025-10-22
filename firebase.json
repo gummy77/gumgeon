@@ -11,6 +11,6 @@
     }]
   },
   "functions": [{
-    "runtime": "nodejs16"
+    "runtime": "nodejs22"
   }]
 }
